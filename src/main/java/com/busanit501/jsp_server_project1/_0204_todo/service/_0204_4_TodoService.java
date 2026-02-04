@@ -4,6 +4,7 @@ import com.busanit501.jsp_server_project1._0204_todo.dao._0204_5_TodoDAO;
 import com.busanit501.jsp_server_project1._0204_todo.domain._0204_2_TodoVO;
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
 import com.busanit501.jsp_server_project1._0204_todo.util._0204_3_MapperUtil;
+import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 
 import java.time.LocalDate;
@@ -11,6 +12,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+// 0204,Log4j2 1
+@Log4j2
 public enum _0204_4_TodoService {
     INSTANCE; // static final 생략이 되어있다.
 
@@ -36,7 +39,9 @@ public enum _0204_4_TodoService {
         _0204_2_TodoVO todoVO = modelMapper.map(todoDTO, _0204_2_TodoVO.class);
 
         // 변환 확인.
-        System.out.println("_0204_4_TodoService에서 register 작업중, 변환 결과 확인 todoVO : " + todoVO);
+//        System.out.println("_0204_4_TodoService에서 register 작업중, 변환 결과 확인 todoVO : " + todoVO);
+        // 0204,Log4j2 2
+        log.info("_0204_4_TodoService에서 register 작업중, 변환 결과 확인 todoVO : " + todoVO);
 
         // DB 에 작업 시키는 클래스를 이용해서, DB 서버에 쓰기 작업하기.
         // 기본 메서드에, 예외처리를 가능하게 변경.

@@ -2,11 +2,13 @@ package com.busanit501.jsp_server_project1.service;
 
 import com.busanit501.jsp_server_project1._0204_todo.dto._0204_1_TodoDTO;
 import com.busanit501.jsp_server_project1._0204_todo.service._0204_4_TodoService;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+@Log4j2
 public class _0204_6_TodoServiceTests {
     // 외부 기능을 담당하는 클래스를 가져오기.
 
@@ -34,7 +36,10 @@ public class _0204_6_TodoServiceTests {
                 .finished(true)
                 .build();
 
+        log.info("로그 라이브러리 logd4j2 기능 테스트 ");
+        log.info(todoDTO);
         todoService.register(todoDTO);
+
     }
 
 }
