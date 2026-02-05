@@ -98,5 +98,20 @@ public enum _0205_1_TodoService {
         return todoDTO;
     }
 
+    // 수정하기
+    public void modify(_0205_2_TodoDTO todoDTO) throws Exception {
+        log.info("todoDTO : " + todoDTO );
+        // dto -> vo 타입으로 변경.
+        _0205_4_TodoVO todoVO = modelMapper.map(todoDTO , _0205_4_TodoVO.class);
+        // dao 의 도움을 받아서, DB 서버에게 일 시키기
+        dao.updateOne(todoVO);
+    }
+
+    // 삭제하기
+    public void remove(Long tno) throws Exception {
+        log.info("삭제할 tno 번호 : " + tno);
+        dao.deleteOne(tno);
+    }
+
 
 } //_4_TodoService 닫기
