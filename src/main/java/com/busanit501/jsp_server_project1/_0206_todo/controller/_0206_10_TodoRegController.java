@@ -60,8 +60,8 @@ public class _0206_10_TodoRegController extends HttpServlet {
 //            resp.sendRedirect("/login");
 //            return;
 //        }
-//
-//        // JSESSIONID 있고, loginInfo(명단), 로그인한 유저 정보가 있어요, -> 로그인 되었다고 가정.
+
+        // JSESSIONID 있고, loginInfo(명단), 로그인한 유저 정보가 있어요, -> 로그인 되었다고 가정.
         // 정상적으로 글쓰기 페이지로 안내.
         req.getRequestDispatcher("/WEB-INF/_0206_todo/todoReg.jsp").forward(req,resp);
 
@@ -74,7 +74,7 @@ public class _0206_10_TodoRegController extends HttpServlet {
             throws ServletException, IOException {
 
         // 받을 때 한글 설정,
-        req.setCharacterEncoding("UTF-8");
+//        req.setCharacterEncoding("UTF-8");
 
         log.info("todo/register 글쓰기 로직 처리하는 곳입니다.");
         log.info("PRG 패턴으로 글쓰기 post 작업 후, 리다이렉트 목록 화면으로 이동하기.");
@@ -89,8 +89,8 @@ public class _0206_10_TodoRegController extends HttpServlet {
         try {
             // 보낼 때 한글 설정,
             // 나중에, 서버에 한번만 설정해서, 따로 설정 없이, 이용만 하면됨.
-            resp.setContentType("text/html;charset=UTF-8");
-            resp.setCharacterEncoding("UTF-8");
+//            resp.setContentType("text/html;charset=UTF-8");
+//            resp.setCharacterEncoding("UTF-8");
             todoService.register(todoDTO);
         } catch (Exception e) {
             e.printStackTrace();

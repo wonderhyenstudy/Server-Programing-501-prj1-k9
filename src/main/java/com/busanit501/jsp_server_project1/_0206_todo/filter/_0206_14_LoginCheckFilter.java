@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Log4j2
+// 톰캣서버의 todo/하위경로 만 적용대상.
 @WebFilter(urlPatterns = {"/todo/*"})
 public class _0206_14_LoginCheckFilter implements Filter {
 

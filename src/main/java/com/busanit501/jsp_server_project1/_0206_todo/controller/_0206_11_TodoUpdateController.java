@@ -27,7 +27,7 @@ public class _0206_11_TodoUpdateController extends HttpServlet {
             throws ServletException, IOException {
         // 글쓰기 화면 제공 코드를 복붙, 수정해서 사용. 반복되는 코드가 있으므로
         // 받을 때 한글 설정,
-        req.setCharacterEncoding("UTF-8");
+//        req.setCharacterEncoding("UTF-8");
 
         log.info("todo/update_0206 수정 화면입니다.");
         //서비스에 전달.
@@ -48,8 +48,8 @@ public class _0206_11_TodoUpdateController extends HttpServlet {
 
             // 보낼 때 한글 설정,
             // 나중에, 서버에 한번만 설정해서, 따로 설정 없이, 이용만 하면됨.
-            resp.setContentType("text/html;charset=UTF-8");
-            resp.setCharacterEncoding("UTF-8");
+//            resp.setContentType("text/html;charset=UTF-8");
+//            resp.setCharacterEncoding("UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
