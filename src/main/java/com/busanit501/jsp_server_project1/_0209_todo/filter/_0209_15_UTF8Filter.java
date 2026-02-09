@@ -13,7 +13,7 @@ import java.io.IOException;
 public class _0209_15_UTF8Filter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        log.info("필터2, 업무: 서버에 접근하는 부분 UTF-8 인코딩 설정. ");
+//        log.info("필터2, 업무: 서버에 접근하는 부분 UTF-8 인코딩 설정. ");
         // req 객체를 구체적인 : HttpServletRequest 로 형변환 후
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         // resp 객체를 구체적인 : HttpServletResponse 로 형변환 후

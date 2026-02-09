@@ -25,6 +25,10 @@ public class _0209_16_LogoutController extends HttpServlet {
         session.removeAttribute("loginInfo");
         // 적용하기.
         session.invalidate();
+
+        // 정상 로그아웃한다면, 쿠키의 remember-me 삭제도 같이 해야, 정상 로그아웃.
+
+
         // 리다이렉트
         resp.sendRedirect("/login_0209");
 
