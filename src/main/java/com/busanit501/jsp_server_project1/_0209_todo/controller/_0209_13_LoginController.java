@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Log4j2
+//      / -> http://localhost:8080, 톰캣 서버의 루트 폴더, 줄여서, 루트 경로라고 부름.
 @WebServlet(name="_0209_13_LoginController", urlPatterns = "/login_0209")
 public class _0209_13_LoginController extends HttpServlet {
     // 앞에 만들었던, 멤버서비스의 기능을 의존하고, 부탁하고, 용역주기.
@@ -61,9 +62,15 @@ public class _0209_13_LoginController extends HttpServlet {
             }
             // 세션에 기록하기.
             HttpSession session = req.getSession();
+            // 세션 : 서버에 저장하는 임시 메모리 공간,
+            // setAttribute -> 저장
+            // 키 : loginInfo(라벨이름)
+            // 값 : memberDTO
             session.setAttribute("loginInfo", memberDTO);
             resp.sendRedirect("/todo/list_0209");
         } catch (Exception e) {
+            // 로그인 실패하면, try 에서 예외가 발생하면, 여기  catch 구문으로 던진다.
+            // /login_0209 , 화면으로 (doGet), 첨부 : result=error , url 무조건 문자열.
            resp.sendRedirect("/login_0209?result=error");
         }
 

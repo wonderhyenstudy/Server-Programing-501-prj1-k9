@@ -22,6 +22,9 @@ public enum  _0209_21_MemberService {
     // 로그인 기능 메서드
     public _0209_18_MemberDTO login(String mid, String mpw) throws Exception {
         _0209_17_MemberVO vo = dao.getWithPassword(mid, mpw);
+        // 용도 구분해서, 사용하기 위함.
+        // DTO : 클래스 끼리 전달용.
+        // VO : 데이터베이스에 적용하는 객체.
         _0209_18_MemberDTO memberDTO = modelMapper.map(vo,_0209_18_MemberDTO.class);
         return memberDTO;
     }

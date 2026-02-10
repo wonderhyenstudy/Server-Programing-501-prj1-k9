@@ -29,7 +29,7 @@ public class _0209_9_TodoReadController extends HttpServlet {
             // 서비스에서 만들었던, get 메서드에, tno 번호를 전달해서, 임시 데이터를 가져오기.
             _0209_6_TodoDTO todoDTO  = _0209_2_TodoService.INSTANCE.get(tno);
             // 데이터를 전달 준비1
-            req.setAttribute("dto", todoDTO);
+            req.setAttribute("dto", todoDTO); // 화면에 담았다.
 
             // =_0209_순서1==========================================================================
             // 웹 브라우저에서, 1) 쿠키를 찾고, 2)없으면, 새로 생성, 3)있으면, 유지하고 기록하기.

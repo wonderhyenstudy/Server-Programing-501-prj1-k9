@@ -89,7 +89,7 @@ public enum _0209_2_TodoService {
 
     // 0205_1 ,
     //Todo 조회
-    // 화면에서, 무엇을 조회할지는 알고 있다. 예시) tno = 1
+    // 화면에서, 무엇을 조회할지는 알고 있다. 예시) tno = 25
     public _0209_6_TodoDTO get(Long tno) throws Exception {
         // DB로부터 전달 받아서, 사용.
         _0209_5_TodoVO todoVO = dao.selectOne(tno);
