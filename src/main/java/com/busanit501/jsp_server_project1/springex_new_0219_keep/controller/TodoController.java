@@ -30,8 +30,9 @@ public class TodoController {
     }
 
     @PostMapping("/register")
-    public void postRegister(TodoDTO todoDTO) {
+    public String postRegister(TodoDTO todoDTO) {
         log.info("todo register..post");
         log.info("todoDTO : " + todoDTO);
+        return "redirect:/todo2/list";
     }
 }
