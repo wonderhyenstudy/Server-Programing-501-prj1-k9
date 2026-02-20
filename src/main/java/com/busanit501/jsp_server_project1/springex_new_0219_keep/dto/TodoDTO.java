@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Data
@@ -13,8 +15,15 @@ import java.time.LocalDate;
 @AllArgsConstructor // 모든 멤버를 매개변수로 가지는 생성자를 생성함.
 public class TodoDTO {
     private Long tno;
+
+    @NotBlank
     private String title;
+
+    @Future
     private LocalDate dueDate;
+
     private  boolean finished;
+
+    @NotBlank
     private String writer;
 }
