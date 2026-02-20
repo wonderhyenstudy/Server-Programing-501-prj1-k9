@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <!-- Required meta tags -->
@@ -105,6 +106,15 @@
                                 <button class="btn btn-primary" type="submit">등록하기</button>
                             </div>
                         </form>
+                        <script>
+                            // 자바스크립트 코드, 유효성체크시, 오류를 담아둘 빈 객체 정의
+                            // 자바스크립트의 객체의 자료구조 형식 , { key:val, key2:val2,...}
+                            const serverValidResult = {}
+                            <c:forEach items="${errors}" var="error">
+                            serverValidResult[`${error.getField()}`] = `${error.defaultMessage}`
+                            </c:forEach>
+                            console.log("유효성 오류가 난 부분들 : " , serverValidResult)
+                        </script>
                     </div>
                 </div>
             </div>

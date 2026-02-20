@@ -43,6 +43,7 @@ public class TodoController {
         // 유효성 체크
         if(bindingResult.hasErrors()) {
             log.info("유효성 오류가 있습니다. ");
+            // 서버에서 화면으로 임시 데이터를 전달. 박스이름: errors, 박스 내용물: 오류가 난 이유.
             redirectAttributes.addFlashAttribute("errors",bindingResult.getAllErrors());
             return "redirect:/todo2/register";
         }
