@@ -37,6 +37,11 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public List<TodoDTO> getAll() {
+        // todoMapper.selectAll() : DB로 부터 전달받은 정보를 TodoVO 타입을 요소로 가지는 리스트로 받기.
+        // .stream() : 병렬처리, 중간 작업, 최종 작업,
+        // 중간 작업 : .map(vo -> modelMapper.map(vo, TodoDTO.class)) , 리스트에서 요소를 하나 꺼내서, VO -> DTO 타입로 변환
+        // 최종 작업 : 변환된 DTO를 리스트화 시키기.
+        // 최종은 :  List<TodoDTO> dtoList, 변환된 요소들이 리스트로 반환되었다.
         List<TodoDTO> dtoList = todoMapper.selectAll().stream()
                 .map(vo -> modelMapper.map(vo, TodoDTO.class))
                 .collect(Collectors.toList());

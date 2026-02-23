@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Log4j2 // 로그를 기록 하는데, 어떤 기준으로 하나요? 로그레벨
 // info, debug , warning
@@ -29,12 +30,17 @@ public class TodoServiceTests {
         //준비물. , 화면에서 넘겨받은 데이터, 임시 더미데이터, 하드코딩.
         // 준비물, 화면에서 넘겨받은 TodoVO 있다고 가정, 또는 더미 데이터 준비.
         TodoDTO todoDTO = TodoDTO.builder()
-                .title("오늘 점심 뭐 먹죠2?")
+                .title("오늘 점심 뭐 먹죠2-0223?")
                 .dueDate(LocalDate.now())
                 .writer("이상용2")
                 .build();
         todoService.register(todoDTO);
+    }
 
+    @Test
+    public void testGetAll() {
+        List<TodoDTO> dtoList = todoService.getAll();
+        dtoList.forEach(dto ->log.info(dto));
     }
 
 }

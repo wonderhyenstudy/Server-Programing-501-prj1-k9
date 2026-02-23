@@ -33,7 +33,7 @@ public class TodoMapperTests {
     public void testInsert() {
         // 준비물, 화면에서 넘겨받은 TodoVO 있다고 가정, 또는 더미 데이터 준비.
         TodoVO todoVO = TodoVO.builder()
-                .title("오늘 점심 뭐 먹죠?")
+                .title("오늘 점심 뭐 먹죠?0223")
                 .dueDate(LocalDate.now())
                 .writer("이상용")
                 .build();
