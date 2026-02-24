@@ -2,6 +2,7 @@ package com.busanit501.jsp_server_project1.mapper;
 
 
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageRequestDTO;
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -70,6 +71,19 @@ public class TodoMapperTests {
                 .finished(true)
                 .build();
         todoMapper.update(todoVO);
+    }
+
+    // 페이징 처리가 된 목록 조회
+    @Test
+    public void testSelectList() {
+        // 화면에서 전달 받은 페이지네이션을 위한 준비물 , 준비.
+        PageRequestDTO pageRequestDTO =  PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .build();
+
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        voList.forEach(vo -> log.info(vo));
     }
 
 }

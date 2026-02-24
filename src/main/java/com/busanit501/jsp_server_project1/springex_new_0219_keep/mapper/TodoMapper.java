@@ -1,6 +1,7 @@
 package com.busanit501.jsp_server_project1.springex_new_0219_keep.mapper;
 
 import com.busanit501.jsp_server_project1.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.jsp_server_project1.springex_new_0219_keep.dto.PageRequestDTO;
 
 import java.util.List;
 
@@ -19,7 +20,10 @@ public interface TodoMapper {
 
     // 삭제
     void delete(Long tno);
-    
+
     //수정
     void update(TodoVO todoVO);
+
+    // 페이지네이션 처리가 된 목록 조회
+    List<TodoVO> selectList(PageRequestDTO pageRequestDTO);
 }
