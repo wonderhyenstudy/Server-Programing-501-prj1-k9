@@ -69,7 +69,7 @@
                                 <span class="input-group-text">Title:</span>
                                 <input class="form-control" type="text" name="title"
                                        value=
-                                       <c:out value="${dto.title}"></c:out>>
+                                       '<c:out value="${dto.title}"></c:out>'>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">DueDate: </span>
