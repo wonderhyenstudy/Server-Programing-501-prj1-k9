@@ -99,4 +99,18 @@ public class TodoMapperTests {
         log.info("전체 갯수 : " + resultCount);
     }
 
+    // 타입에 따른 검색 연습,
+    @Test
+    public void testSelectSearch() {
+    // 검색시 준비물, 검색어 , 타입
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .types(new String[]{"t","w"})
+                .keyword("AAA")
+                .build();
+
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        voList.forEach(vo -> log.info(vo));
+    }
 }
